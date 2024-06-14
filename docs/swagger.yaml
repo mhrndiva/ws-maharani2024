@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  model.JamKerja:
+  controller.JamKerja:
     properties:
       durasi:
         type: integer
@@ -19,7 +19,7 @@ definitions:
       shift:
         type: integer
     type: object
-  model.Karyawan:
+  controller.Karyawan:
     properties:
       _id:
         type: string
@@ -31,19 +31,19 @@ definitions:
         type: string
       jam_kerja:
         items:
-          $ref: '#/definitions/model.JamKerja'
+          $ref: '#/definitions/controller.JamKerja'
         type: array
       nama:
         type: string
       phone_number:
         type: string
     type: object
-  model.Presensi:
+  controller.Presensi:
     properties:
       _id:
         type: string
       biodata:
-        $ref: '#/definitions/model.Karyawan'
+        $ref: '#/definitions/controller.Karyawan'
       checkin:
         type: string
       datetime:
@@ -78,7 +78,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/model.Presensi'
+            $ref: '#/definitions/controller.Presensi'
       summary: Get All Data Presensi.
       tags:
       - Presensi

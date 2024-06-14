@@ -34,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/model.Presensi"
+                            "$ref": "#/definitions/controller.Presensi"
                         }
                     }
                 }
@@ -42,7 +42,7 @@
         }
     },
     "definitions": {
-        "model.JamKerja": {
+        "controller.JamKerja": {
             "type": "object",
             "properties": {
                 "durasi": {
@@ -71,7 +71,7 @@
                 }
             }
         },
-        "model.Karyawan": {
+        "controller.Karyawan": {
             "type": "object",
             "properties": {
                 "_id": {
@@ -89,7 +89,7 @@
                 "jam_kerja": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/model.JamKerja"
+                        "$ref": "#/definitions/controller.JamKerja"
                     }
                 },
                 "nama": {
@@ -100,14 +100,14 @@
                 }
             }
         },
-        "model.Presensi": {
+        "controller.Presensi": {
             "type": "object",
             "properties": {
                 "_id": {
                     "type": "string"
                 },
                 "biodata": {
-                    "$ref": "#/definitions/model.Karyawan"
+                    "$ref": "#/definitions/controller.Karyawan"
                 },
                 "checkin": {
                     "type": "string"

@@ -36,7 +36,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/model.Presensi"
+                            "$ref": "#/definitions/controller.Presensi"
                         }
                     }
                 }
@@ -44,7 +44,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "model.JamKerja": {
+        "controller.JamKerja": {
             "type": "object",
             "properties": {
                 "durasi": {
@@ -73,7 +73,7 @@ const docTemplate = `{
                 }
             }
         },
-        "model.Karyawan": {
+        "controller.Karyawan": {
             "type": "object",
             "properties": {
                 "_id": {
@@ -91,7 +91,7 @@ const docTemplate = `{
                 "jam_kerja": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/model.JamKerja"
+                        "$ref": "#/definitions/controller.JamKerja"
                     }
                 },
                 "nama": {
@@ -102,14 +102,14 @@ const docTemplate = `{
                 }
             }
         },
-        "model.Presensi": {
+        "controller.Presensi": {
             "type": "object",
             "properties": {
                 "_id": {
                     "type": "string"
                 },
                 "biodata": {
-                    "$ref": "#/definitions/model.Karyawan"
+                    "$ref": "#/definitions/controller.Karyawan"
                 },
                 "checkin": {
                     "type": "string"
