@@ -4,6 +4,7 @@ import (
 	"github.com/mhrndiva/ws-maharani2024/controller"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger" // swagger handler
 )
 
 func Web(page *fiber.App) {
@@ -23,4 +24,7 @@ func Web(page *fiber.App) {
 	page.Post("/insert", controller.InsertDataPresensi) //masukin data presensi
 	page.Put("/update/:id", controller.UpdateData) //update data presensi
 	page.Delete("/delete/:id", controller.DeletePresensiByID)
+	
+	page.Get("/docs/*", swagger.HandlerDefault)
+	
 }
