@@ -16,5 +16,118 @@
     },
     "host": "ws-maharani2024-db57da935d66.herokuapp.com",
     "basePath": "/",
-    "paths": {}
+    "paths": {
+        "/presensi": {
+            "get": {
+                "description": "Mengambil semua data presensi.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Presensi"
+                ],
+                "summary": "Get All Data Presensi.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Presensi"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.JamKerja": {
+            "type": "object",
+            "properties": {
+                "durasi": {
+                    "type": "integer"
+                },
+                "gmt": {
+                    "type": "integer"
+                },
+                "hari": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "jam_keluar": {
+                    "type": "string"
+                },
+                "jam_masuk": {
+                    "type": "string"
+                },
+                "piket_tim": {
+                    "type": "string"
+                },
+                "shift": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.Karyawan": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "hari_kerja": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "jabatan": {
+                    "type": "string"
+                },
+                "jam_kerja": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.JamKerja"
+                    }
+                },
+                "nama": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Presensi": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "biodata": {
+                    "$ref": "#/definitions/model.Karyawan"
+                },
+                "checkin": {
+                    "type": "string"
+                },
+                "datetime": {
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
